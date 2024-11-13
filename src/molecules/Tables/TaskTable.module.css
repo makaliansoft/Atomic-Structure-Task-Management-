@@ -1,0 +1,65 @@
+/* TaskTable.module.css */
+
+.tableContainer {
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tableHeadCell {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 16px;
+  text-transform: uppercase;
+}
+
+.tableCell {
+  padding: 0!important;
+}
+
+.tableRow {
+  background-color: #fff;
+}
+
+.tableRow:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.tableRow:hover {
+  background-color: #f1f1f1;
+}
+
+.taskName {
+  color: #000;
+}
+
+.organization {
+  color: #757575;
+}
+
+.assigneeContainer {
+  display: flex;
+  align-items: center;
+}
+
+.commentIcon {
+  color: #00796b;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagLabel {
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  font-size: 14px;
+}

@@ -1,0 +1,21 @@
+.comment-box {
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 0;
+  }
+  
+  .comment-content {
+    margin-left: 8px;
+  }
+  
+  .comment-content h4 {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  
+  .comment-content p {
+    margin: 4px 0;
+    font-size: 0.85em;
+  }
+  

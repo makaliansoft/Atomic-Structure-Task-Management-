@@ -1,0 +1,11 @@
+.navigation-item {
+  display: flex;
+  align-items: center;
+  padding: 8px, 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation-item .label {
+  margin-left: 8px;
+}

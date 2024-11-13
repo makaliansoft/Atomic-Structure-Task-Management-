@@ -1,0 +1,123 @@
+/* Container for the entire layout */
+.task-layout {
+  display: flex;
+  grid-template-columns: 80px 1fr;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* .sidebar-container {
+  background-color: #f4f4f4;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+} */
+
+/* Main content area */
+.content-area {
+  flex: 1;
+  /* max-width: 75%; */
+}
+
+.comment-area {
+  /* margin: 20px 0 0 20px; */
+  margin-left: 25px;
+  margin-top: 10px;
+  display: flex;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  padding: 12px;
+  background-color: #fff3f3;
+  border-radius: 15px;
+  width: auto;
+}
+
+.first-row,
+.second-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-cards {
+  margin-left: 25px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 332px;
+  /* width: auto;
+  margin-bottom: 20px; */
+}
+.recent-task {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #eeeff1;
+  /* width: 40%; */
+  /* margin-top: 20px; */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+}
+
+.upcoming-task-card {
+  max-height: 332px;
+  display: flex;
+  flex-direction: row;
+  background-color: #eeeff1;
+  /* width: auto; */
+  /* margin-top: 20px; */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  /* margin-left: 20px; */
+}
+.upcoming-task-date {
+  margin-left: 10px;
+  /* margin-top: 20px; */
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.upcoming-task {
+  overflow-y: auto;
+  /* margin-top: 15px;  */
+  flex-grow: 1;
+}
+
+.task-sections {
+  margin-left: 25px;
+}
+
+.section-container {
+  background-color: #ffffff;
+}
+.section-header {
+  background-color: #e4e2e2d7;
+}
+.task-sections {
+  display: grid;
+}
+
+/* Sidebar styling */
+/* Sidebar styling */
+.sidebar-wrapper {
+  margin-left: 20px;
+  position: relative;
+  top: 0;
+  right: -400px; /* Start off-screen on the right */
+  width: 400px;
+  height: auto;
+  background-color: #fff;
+  transition: right 0.3s ease-in-out; /* Smooth transition for sliding */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left side */
+  z-index: 1000;
+}
+
+/* When sidebar is open, it should slide in from the right */
+.sidebar-wrapper.open {
+  right: 0;
+}

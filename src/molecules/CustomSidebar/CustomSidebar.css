@@ -1,0 +1,118 @@
+/* CustomSidebar.css */
+
+.custom-sidebar {
+  background-color: white;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+}
+
+/* .custom-sidebar.open {
+  transform: translateX(0); 
+} */
+
+.custom-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.custom-sidebar-icons {
+  display: flex;
+  align-items: center;
+}
+
+.custom-sidebar-title,
+.custom-sidebar-header,
+.custom-sidebar-section,
+.custom-sidebar-tags,
+.custom-sidebar-subtask,
+.custom-sidebar-description,
+.custom-sidebar-comments {
+  margin-bottom: 20px;
+}
+
+.custom-sidebar-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.custom-sidebar-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.custom-sidebar-assignee {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* .custom-sidebar-assignee-avatar {
+    margin-left: 8px;
+  } */
+
+.custom-sidebar-chip {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.custom-sidebar-image-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.custom-sidebar-image {
+  width: 64px;
+  height: 64px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.custom-sidebar-input-field {
+  margin-bottom: 16px;
+}
+
+/* This section will grow to fill the available space above the comments section */
+.custom-sidebar-content {
+  flex-grow: 1; /* This makes the content area fill the available height */
+}
+
+.custom-sidebar-comments-list {
+  margin-top: auto; /* Pushes this to the bottom of the sidebar */
+}
+
+.custom-sidebar-comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.custom-sidebar-comment-text {
+  margin-left: 8px;
+}
+
+.custom-sidebar-close-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 8px;
+}
+
+.custom-sidebar-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+}
