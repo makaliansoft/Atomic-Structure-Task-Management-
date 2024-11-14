@@ -19,8 +19,6 @@ import styles from "./TaskTable.module.css";
 import CustomChip from "../../atoms/CustomChip/CustomChip";
 
 const TaskTable = ({ data, onRowClick }) => {
-  data.map((section)=> {
-  })
   return (
     <>
       <Table sx={{ padding: "5px" }}>
@@ -71,7 +69,7 @@ const TaskTable = ({ data, onRowClick }) => {
               {/* Assignee Column */}
               <TableCell>
                 <div className={styles.assigneeContainer}>
-                  <AvatarGroup total={5}>
+                  <AvatarGroup>
                     {section.assignees.map((assignee, idx) => (
                       <UserAvatar
                         key={idx}
@@ -103,7 +101,7 @@ const TaskTable = ({ data, onRowClick }) => {
                       label={tag}
                       color="grey"
                       variant="filled"
-                      sx={{ Padding: 1 }}
+                      sx={{ Padding: 1, margin: "5px" }}
                     />
                   ))}
                 </div>

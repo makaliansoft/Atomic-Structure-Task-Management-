@@ -92,7 +92,10 @@
 }
 
 .custom-sidebar-comments-list {
-  margin-top: auto; /* Pushes this to the bottom of the sidebar */
+  padding: 5px;
+  margin-top: 16px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 5px 10px #bdbdbd;
 }
 
 .custom-sidebar-comment {

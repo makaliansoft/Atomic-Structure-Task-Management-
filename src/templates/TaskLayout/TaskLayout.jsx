@@ -15,6 +15,8 @@ import sectionData from "../../Data/data";
 import TaskTable from "../../molecules/Tables/TaskTable";
 import CustomDropdown from "../../atoms/CustomDropdown/CustomDropdown";
 import CustomSidebar from "../../molecules/CustomSidebar/CustomSidebar";
+import ProgressBar from "../../atoms/ProgressBar/ProgressBar";
+import { Box, Typography } from "@mui/material";
 
 const recentTasks = [
   { id: 1, taskName: "Meetings", isCompleted: false, date: "2024-11-07" },
@@ -77,7 +79,7 @@ const upcomingTasks = [
 ];
 
 const TaskLayout = () => {
-  const [expandedSection, setExpandedSection] = useState(null);
+  const [selectedSectionName, setSelectedSectionName] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [activeSection, setActiveSection] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -92,7 +94,8 @@ const TaskLayout = () => {
     setActiveSection(index);
   };
 
-  const handleRowClick = (task) => {
+  const handleRowClick = (task, sectionName) => {
+    setSelectedSectionName(sectionName);
     console.log("task in taskLayout:", task);
     setSelectedTask(task);
     setSidebarOpen(true);
@@ -190,26 +193,38 @@ const TaskLayout = () => {
           <div className="task-sections">
             {sectionData.map(
               (section, sectionIndex) =>
-                sectionIndex === activeSection ? ( // Render only active section
+                sectionIndex === activeSection ? (
                   <div key={sectionIndex} className="section-container">
-                    <CustomDropdown
-                      key={section.sectionName}
-                      title={section.sectionName}
-                      defaultOpen={true}
-                    >
-                      <TaskTable
-                        data={section.tasks}
-                        onRowClick={handleRowClick}
-                      />
-                    </CustomDropdown>
+                    <Box display="flex" flexDirection="column">
+                      {/* ProgressBar component with section prop */}
+
+                      {/* Section Dropdown */}
+                      <CustomDropdown
+                        key={section.sectionName}
+                        title={section.sectionName}
+                        defaultOpen={true}
+                      >
+                      <ProgressBar section={section} />
+                        <TaskTable
+                          data={section.tasks}
+                          onRowClick={(task) =>
+                            handleRowClick(task, section.sectionName)
+                          }
+                        />
+                      </CustomDropdown>
+                    </Box>
                   </div>
-                ) : null // Don't render other sections
+                ) : null // Render only the active section
             )}
           </div>
         </div>
         {sidebarOpen && (
           <div className={`sidebar-wrapper ${delayedOpen ? "open" : ""}`}>
-            <CustomSidebar task={selectedTask} onClose={closeSidebar} />
+            <CustomSidebar
+              task={selectedTask}
+              onClose={closeSidebar}
+              sectionName={selectedSectionName}
+            />
           </div>
         )}
       </div>
